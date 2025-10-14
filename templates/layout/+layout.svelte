@@ -15,6 +15,7 @@
 <Navbar {authClient} user={data.user}>
   {#snippet publicLinks()}
     <NavLink href="/">Home</NavLink>
+    <NavLink href="/css-demo">CSS Demo</NavLink>
   {/snippet}
   {#snippet authLinks()}
     <NavLink href="/secret">Secret</NavLink>
