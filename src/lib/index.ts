@@ -10,10 +10,5 @@ export { default as ToastContainer } from "./components/toast/toast-container.sv
 export { toastStore } from "./stores/toast.js";
 export type { ToastData } from "./stores/toast.js";
 
-// Database
-export { createDatabase } from "./db/db.js";
-export * as schema from "./db/schema.js";
-
 // Auth
-export { createAuth } from "./auth/auth.js";
 export { initAuthClient } from "./auth/auth-client.js";
