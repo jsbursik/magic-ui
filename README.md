@@ -137,7 +137,7 @@ The CLI creates `src/lib/db/schema.ts` which re-exports all Better-Auth tables. 
 ```typescript
 // src/lib/db/schema.ts
 import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
-import * as magicSchema from "@jsbursik/magic-ui/server";
+import { user } from "@jsbursik/magic-ui/server";
 
 // Re-export Magic UI tables
 export * from "@jsbursik/magic-ui/server";
@@ -145,7 +145,7 @@ export * from "@jsbursik/magic-ui/server";
 // Add your custom tables
 export const posts = pgTable("posts", {
   id: text("id").primaryKey(),
-  userId: text("user_id").notNull().references(() => magicSchema.user.id),
+  userId: text("user_id").notNull().references(() => user.id),
   title: text("title").notNull(),
   content: text("content"),
   createdAt: timestamp("created_at").defaultNow().notNull(),

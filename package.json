@@ -1,6 +1,6 @@
 {
   "name": "@jsbursik/magic-ui",
-  "version": "0.0.8-alpha",
+  "version": "0.0.9-alpha",
   "files": [
     "dist",
     "!dist/**/*.test.*",
