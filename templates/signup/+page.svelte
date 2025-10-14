@@ -43,7 +43,7 @@
 
       await invalidateAll();
       toastStore.show("Account created Successfully!", "success");
-      goto("/login");
+      goto("/");
     } catch (e: any) {
       toastStore.show(e.message || "Signup failed", "danger");
     } finally {

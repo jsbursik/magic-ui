@@ -65,6 +65,9 @@ try {
   copyDir("lib/db", "src/lib/db");
   copyDir("login", "src/routes/login");
   copyDir("signup", "src/routes/signup");
+  copydir("secret", "src/routes/secret");
+  copyDir("css-demo", "src/routes/css-demo");
+  copyFile("+page.svelte", "src/routes/+page.svelte");
 
   console.log("\n✅ Magic UI initialized!");
   console.log("\nNext steps:");
