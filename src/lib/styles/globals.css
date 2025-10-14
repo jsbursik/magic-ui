@@ -299,7 +299,7 @@ button:hover,
 .button:hover,
 button:active,
 .button:active {
-  background: var(--color-primary-hover);
+  background: color-mix(in srgb, var(--color-primary) 85%, black);
   box-shadow: var(--shadow-md);
 }
 
@@ -500,7 +500,7 @@ tbody tr:hover {
   border-color: var(--color-success);
 
   &:hover {
-    background: color-mix(in srgb, var(--color-success) 40%, white);
+    background: color-mix(in srgb, var(--color-success) 85%, black);
   }
 }
 
@@ -509,7 +509,7 @@ tbody tr:hover {
   border-color: var(--color-warning);
 
   &:hover {
-    background: color-mix(in srgb, var(--color-warning) 40%, white);
+    background: color-mix(in srgb, var(--color-warning) 85%, black);
   }
 }
 
@@ -518,7 +518,7 @@ tbody tr:hover {
   border-color: var(--color-danger);
 
   &:hover {
-    background: color-mix(in srgb, var(--color-danger) 40%, white);
+    background: color-mix(in srgb, var(--color-danger) 85%, black);
   }
 }
 
