@@ -16,12 +16,15 @@ A SvelteKit component library with authentication, database setup, and beautiful
 ```bash
 # npm
 npm install @jsbursik/magic-ui svelte @sveltejs/kit better-auth drizzle-orm postgres @tabler/icons-svelte
+npm install -D drizzle-kit
 
 # pnpm
 pnpm add @jsbursik/magic-ui svelte @sveltejs/kit better-auth drizzle-orm postgres @tabler/icons-svelte
+pnpm add -D drizzle-kit
 
 # yarn
 yarn add @jsbursik/magic-ui svelte @sveltejs/kit better-auth drizzle-orm postgres @tabler/icons-svelte
+yarn add -D drizzle-kit
 ```
 
 ### 2. Scaffold Everything
@@ -41,8 +44,10 @@ yarn dlx @jsbursik/magic-ui
 
 This creates:
 
+- ✅ `drizzle.config.ts` - Drizzle Kit configuration
 - ✅ `src/hooks.server.ts` - Auth middleware with route protection
 - ✅ `src/app.d.ts` - TypeScript definitions
+- ✅ `src/lib/db/schema.ts` - Database schema (extends package schema)
 - ✅ `src/routes/+layout.svelte` - Main layout with navbar
 - ✅ `src/routes/+layout.server.ts` - Server-side session loading
 - ✅ `src/routes/api/auth/[...all]/+server.ts` - Auth API endpoints
@@ -58,19 +63,20 @@ Create a `.env` file:
 ```bash
 DATABASE_URL=postgresql://user:password@localhost:5432/mydb
 PUBLIC_BASE_URL=http://localhost:5173
+BETTER_AUTH_SECRET=your-secret-key-here
 ```
 
 ### 4. Run Database Migrations
 
 ```bash
-npx drizzle-kit generate
-npx drizzle-kit migrate
+pnpm drizzle-kit generate
+pnpm drizzle-kit migrate
 ```
 
 ### 5. Start Developing
 
 ```bash
-npm run dev
+pnpm dev
 ```
 
 That's it! Visit `http://localhost:5173/signup` to create an account.
@@ -126,21 +132,27 @@ All components are available after scaffolding. Examples:
 
 ### Extending the Database Schema
 
-The library provides Better-Auth tables. Add your own:
+The CLI creates `src/lib/db/schema.ts` which re-exports all Better-Auth tables. Add your own tables there:
 
 ```typescript
 // src/lib/db/schema.ts
-import { schema } from "@jsbursik/magic-ui";
-import { pgTable, text } from "drizzle-orm/pg-core";
+import { pgTable, text, timestamp } from "drizzle-orm/pg-core";
+import * as magicSchema from "@jsbursik/magic-ui/server";
 
+// Re-export Magic UI tables
+export * from "@jsbursik/magic-ui/server";
+
+// Add your custom tables
 export const posts = pgTable("posts", {
   id: text("id").primaryKey(),
-  userId: text("user_id").references(() => schema.user.id),
+  userId: text("user_id").notNull().references(() => magicSchema.user.id),
+  title: text("title").notNull(),
   content: text("content"),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
 });
-
-export * from "@jsbursik/magic-ui";
 ```
+
+After adding tables, run `pnpm drizzle-kit generate` and `pnpm drizzle-kit migrate`.
 
 ### Custom Styling
 
@@ -186,6 +198,8 @@ toast.remove(id: string)
 
 Running the CLI sets up everything you need:
 
+- **Drizzle Config** (`drizzle.config.ts`) - Drizzle Kit configuration
+- **Database Schema** (`src/lib/db/schema.ts`) - Extends package schema for custom tables
 - **Server Hooks** (`src/hooks.server.ts`) - Auth middleware and route protection
 - **Type Definitions** (`src/app.d.ts`) - TypeScript types for locals
 - **Layout Files** (`src/routes/+layout.*`) - Main layout with navbar and session handling
