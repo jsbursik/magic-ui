@@ -276,6 +276,7 @@ fieldset {
 legend {
   font-weight: 600;
   padding: 0 var(--space-sm);
+  margin-bottom: -100%;
 }
 
 /* === BUTTONS === */
