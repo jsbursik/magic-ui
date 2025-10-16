@@ -1,7 +1,6 @@
 <script>
   import { IconWand, IconUser } from "@tabler/icons-svelte";
   import { goto, invalidateAll } from "$app/navigation";
-  import NavLink from "./nav-link.svelte";
 
   let { authClient, user, publicLinks, authLinks } = $props();
 
@@ -67,11 +66,6 @@
 </nav>
 
 <style>
-  /* .app-container {
-    min-height: 100vh;
-    background: var(--color-bg);
-  } */
-
   /* Navbar */
   .navbar {
     background: var(--color-surface);
