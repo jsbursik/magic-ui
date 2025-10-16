@@ -281,7 +281,7 @@ legend {
 
 /* === BUTTONS === */
 button,
-.button {
+.btn {
   display: inline-block;
   padding: var(--space-sm) var(--space-lg);
   font-family: inherit;
@@ -297,9 +297,9 @@ button,
 }
 
 button:hover,
-.button:hover,
+.btn:hover,
 button:active,
-.button:active {
+.btn:active {
   background: color-mix(in srgb, var(--color-primary) 85%, black);
   box-shadow: var(--shadow-md);
 }
@@ -310,8 +310,8 @@ button:disabled {
   transform: none;
 }
 
-a.button,
-a.button:hover {
+a.btn,
+a.btn:hover {
   color: white;
   text-decoration: none;
 }
