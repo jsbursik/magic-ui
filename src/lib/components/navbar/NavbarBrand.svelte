@@ -16,6 +16,7 @@
     font-size: 1.25rem;
     font-weight: 600;
     transition: var(--transition);
+    margin-right: 1rem;
   }
 
   .navbar-brand:hover {

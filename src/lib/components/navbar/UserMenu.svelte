@@ -1,6 +1,6 @@
 <script lang="ts">
   import { IconUser } from "@tabler/icons-svelte";
-  import type { Snippet } from "svelte";
+  import { goto, invalidateAll } from "$app/navigation";
 
   interface User {
     name?: string;
@@ -9,7 +9,6 @@
 
   interface MenuItem {
     label: string;
-    icon?: Snippet;
     onClick?: () => void;
     danger?: boolean;
     divider?: boolean;
@@ -18,10 +17,10 @@
   interface Props {
     user?: User;
     items?: MenuItem[];
-    onLogout?: () => void;
+    authClient?: any; // or your specific auth client type
   }
 
-  let { user, items = [], onLogout }: Props = $props();
+  let { user, items = [], authClient }: Props = $props();
   let isOpen = $state(false);
 
   function handleItemClick(item: MenuItem) {
@@ -29,6 +28,15 @@
       item.onClick();
     }
     isOpen = false;
+  }
+
+  async function handleLogout() {
+    if (authClient) {
+      await authClient.signOut();
+      await invalidateAll();
+      isOpen = false;
+      goto("/");
+    }
   }
 </script>
 
@@ -55,17 +63,14 @@
           <hr />
         {:else}
           <button class="dropdown-item {item.danger ? 'danger' : ''}" onclick={() => handleItemClick(item)}>
-            {#if item.icon}
-              {@render item.icon()}
-            {/if}
             {item.label}
           </button>
         {/if}
       {/each}
 
-      {#if onLogout}
+      {#if authClient}
         <hr />
-        <button class="dropdown-item danger" onclick={onLogout}> Logout </button>
+        <button class="dropdown-item danger" onclick={handleLogout}> Logout </button>
       {/if}
     </div>
   {/if}
