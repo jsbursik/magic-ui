@@ -1,6 +1,6 @@
 {
   "name": "@jsbursik/magic-ui",
-  "version": "0.1.6-beta",
+  "version": "0.1.7-beta",
   "files": [
     "dist",
     "!dist/**/*.test.*",
@@ -63,6 +63,7 @@
     "db:generate": "drizzle-kit generate",
     "db:migrate": "drizzle-kit migrate",
     "db:studio": "drizzle-kit studio",
-    "package": "svelte-kit sync && svelte-package"
+    "package": "svelte-kit sync && svelte-package",
+    "deploy": "pnpm run package && pnpm publish --access public"
   }
 }
