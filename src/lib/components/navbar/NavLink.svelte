@@ -25,7 +25,7 @@
 
   .nav-link:hover {
     color: var(--color-text);
-    background: var(--color-bg);
+    background: var(--color-border);
     transform: none;
     box-shadow: none;
   }
