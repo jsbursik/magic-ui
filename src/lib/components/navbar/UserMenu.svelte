@@ -1,6 +1,7 @@
 <script lang="ts">
   import { IconUser } from "@tabler/icons-svelte";
   import { goto, invalidateAll } from "$app/navigation";
+  import "./dropdown.css";
 
   interface User {
     name?: string;
@@ -123,52 +124,6 @@
 
   :global(.avatar-icon) {
     color: white;
-  }
-
-  .dropdown-menu {
-    position: absolute;
-    right: 0;
-    top: calc(100% + var(--space-sm));
-    width: 12rem;
-    background: var(--color-surface);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-lg);
-    border: 1px solid var(--color-border);
-    padding: var(--space-xs);
-    z-index: 1000;
-  }
-
-  .dropdown-item {
-    width: 100%;
-    text-align: left;
-    padding: var(--space-sm) var(--space-md);
-    font-size: 0.875rem;
-    color: var(--color-text);
-    background: transparent;
-    border: none;
-    border-radius: var(--radius-sm);
-    cursor: pointer;
-    transition: var(--transition);
-    font-weight: normal;
-    display: flex;
-    align-items: center;
-    gap: var(--space-sm);
-  }
-
-  .dropdown-item:hover {
-    background: var(--color-bg);
-    transform: none;
-    box-shadow: none;
-  }
-
-  .dropdown-item.danger {
-    color: var(--color-danger);
-  }
-
-  .dropdown-menu hr {
-    margin: var(--space-xs) 0;
-    border: none;
-    border-top: 1px solid var(--color-border);
   }
 
   @media (max-width: 768px) {

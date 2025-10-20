@@ -4,6 +4,7 @@
   import NavbarContent from "$lib/components/navbar/NavbarContent.svelte";
   import NavLink from "$lib/components/navbar/NavLink.svelte";
   import NavbarMenu from "$lib/components/navbar/NavbarMenu.svelte";
+  import NavDropdown from "$lib/components/navbar/NavbarDropdown.svelte";
   import UserMenu from "$lib/components/navbar/UserMenu.svelte";
   import ToastContainer from "$lib/components/toast/toast-container.svelte";
   import ModeToggle from "$lib/components/mode-toggle.svelte";
@@ -35,6 +36,14 @@
   <NavbarContent>
     <NavLink href="/">Home</NavLink>
     <NavLink href="/css-demo">CSS Demo</NavLink>
+    <NavDropdown
+      name="Test"
+      menuItems={[
+        { label: "Test", href: "/test/test1" },
+        { label: "hr", divider: true },
+        { label: "Test 2", href: "/test/test2" },
+      ]}
+    />
     {#if user}
       <NavLink href="/secret">Secret</NavLink>
     {/if}
