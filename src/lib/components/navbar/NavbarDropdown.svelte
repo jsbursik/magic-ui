@@ -1,6 +1,6 @@
 <script lang="ts">
   import { page } from "$app/state";
-  import "./dropdown.css";
+  import "./Dropdown.css";
 
   type MenuItem = {
     label: string;

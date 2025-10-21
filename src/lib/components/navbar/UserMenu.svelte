@@ -1,7 +1,7 @@
 <script lang="ts">
   import { IconUser } from "@tabler/icons-svelte";
   import { goto, invalidateAll } from "$app/navigation";
-  import "./dropdown.css";
+  import "./Dropdown.css";
 
   interface User {
     name?: string;

@@ -10,7 +10,7 @@ export { default as Navbar } from "./components/navbar/Navbar.svelte";
 export { default as NavbarBrand } from "./components/navbar/NavbarBrand.svelte";
 export { default as NavbarContent } from "./components/navbar/NavbarContent.svelte";
 export { default as NavbarMenu } from "./components/navbar/NavbarMenu.svelte";
-export { default as NavDropdown } from "./components/navbar/NavbarDropdown.svelte";
+export { default as NavbarDropdown } from "./components/navbar/NavbarDropdown.svelte";
 export { default as UserMenu } from "./components/navbar/UserMenu.svelte";
 
 // Toasts

@@ -4,7 +4,7 @@
   import { NavbarContent } from "@jsbursik/magic-ui";
   import { NavLink } from "@jsbursik/magic-ui";
   import { NavbarMenu } from "@jsbursik/magic-ui";
-  import { NavDropdown } from "@jsbursik/magic-ui";
+  import { NavbarDropdown } from "@jsbursik/magic-ui";
   import { UserMenu } from "@jsbursik/magic-ui";
   import { ToastContainer } from "@jsbursik/magic-ui";
   import { ModeToggle } from "@jsbursik/magic-ui";
@@ -36,7 +36,7 @@
   <NavbarContent>
     <NavLink href="/">Home</NavLink>
     <NavLink href="/css-demo">CSS Demo</NavLink>
-    <NavDropdown
+    <NavbarDropdown
       name="Test"
       menuItems={[
         { label: "Test", href: "/test/test1" },
