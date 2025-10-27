@@ -149,7 +149,9 @@ h6 {
 p {
   margin-bottom: var(--space-md);
   color: var(--color-text-muted);
-  text-indent: 1.5rem;
+  &.indent {
+    text-indent: 1.5rem;
+  }
 }
 
 a {
