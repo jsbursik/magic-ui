@@ -116,12 +116,12 @@
       <a href="/login">Already have an account?</a>
     </div>
   </div>
-
-  <style>
-    .error {
-      font-size: 0.8rem;
-      color: var(--color-danger);
-      margin: 1rem 0;
-    }
-  </style>
 </main>
+
+<style>
+  .error {
+    font-size: 0.8rem;
+    color: var(--color-danger);
+    margin: 1rem 0;
+  }
+</style>
