@@ -41,24 +41,26 @@
   }
 </script>
 
-<div class="auth-container">
-  <div class="card">
-    <form class="stack" onsubmit={handleLogin}>
-      <h1 class="center-text">Login</h1>
-      <div>
-        <label for="email">Email:</label>
-        <Input type="email" name="email" id="email" bind:value={email} bind:valid={emailValid} placeholder="email@example.com" required />
-      </div>
-      <div>
-        <label for="password">Password:</label>
-        <Input type="password" name="password" id="password" bind:value={password} bind:valid={passValid} placeholder="Enter Your Password" required />
-      </div>
-      <div>
-        <button type="submit" class="m-auto w-100" style="margin-top: 1rem;" disabled={!isValid}>Login</button>
-      </div>
-    </form>
+<main>
+  <div class="auth-container">
+    <div class="card">
+      <form class="stack" onsubmit={handleLogin}>
+        <h1 class="center-text">Login</h1>
+        <div>
+          <label for="email">Email:</label>
+          <Input type="email" name="email" id="email" bind:value={email} bind:valid={emailValid} placeholder="email@example.com" required />
+        </div>
+        <div>
+          <label for="password">Password:</label>
+          <Input type="password" name="password" id="password" bind:value={password} bind:valid={passValid} placeholder="Enter Your Password" required />
+        </div>
+        <div>
+          <button type="submit" class="m-auto w-100" style="margin-top: 1rem;" disabled={!isValid}>Login</button>
+        </div>
+      </form>
+    </div>
+    <div class="center-text">
+      <a href="/signup">Don't have an account?</a>
+    </div>
   </div>
-  <div class="center-text">
-    <a href="/signup">Don't have an account?</a>
-  </div>
-</div>
+</main>

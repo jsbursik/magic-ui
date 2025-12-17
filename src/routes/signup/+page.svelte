@@ -58,60 +58,70 @@
   }
 </script>
 
-<div class="auth-container">
-  <div class="card">
-    <form class="stack" onsubmit={handleSignup}>
-      <h1 class="center-text">Sign Up</h1>
-      <div>
-        <label for="name">Name</label>
-        <Input type="text" name="name" id="name" bind:value={formValues.name} bind:valid={formValidity.name} placeholder="Enter your name or handle" required />
-      </div>
-      <div>
-        <label for="email">Email</label>
-        <Input type="email" name="email" id="email" bind:value={formValues.email} bind:valid={formValidity.email} placeholder="email@example.com" required />
-      </div>
-      <div>
-        <label for="password">Password</label>
-        <Input
-          type="password"
-          name="password"
-          id="password"
-          bind:value={formValues.password}
-          bind:valid={formValidity.password}
-          placeholder="Enter your password"
-          required
-        />
-      </div>
-      <div>
-        <label for="password-confirm">Confirm Password</label>
-        <Input
-          type="password"
-          name="password-confirm"
-          id="password-confirm"
-          bind:value={formValues.passwordConfirm}
-          bind:valid={formValidity.passwordConfirm}
-          placeholder="Confirm your password"
-          onInput={handlePassMatch}
-          required
-        />
-      </div>
-      {#if !passMatch}
-        <p class="error center-text">Passwords don't match</p>
-      {/if}
-      <div>
-        <button type="submit" class="m-auto w-100" disabled={!isValid}>Sign Up</button>
-      </div>
-    </form>
+<main>
+  <div class="auth-container">
+    <div class="card">
+      <form class="stack" onsubmit={handleSignup}>
+        <h1 class="center-text">Sign Up</h1>
+        <div>
+          <label for="name">Name</label>
+          <Input
+            type="text"
+            name="name"
+            id="name"
+            bind:value={formValues.name}
+            bind:valid={formValidity.name}
+            placeholder="Enter your name or handle"
+            required
+          />
+        </div>
+        <div>
+          <label for="email">Email</label>
+          <Input type="email" name="email" id="email" bind:value={formValues.email} bind:valid={formValidity.email} placeholder="email@example.com" required />
+        </div>
+        <div>
+          <label for="password">Password</label>
+          <Input
+            type="password"
+            name="password"
+            id="password"
+            bind:value={formValues.password}
+            bind:valid={formValidity.password}
+            placeholder="Enter your password"
+            required
+          />
+        </div>
+        <div>
+          <label for="password-confirm">Confirm Password</label>
+          <Input
+            type="password"
+            name="password-confirm"
+            id="password-confirm"
+            bind:value={formValues.passwordConfirm}
+            bind:valid={formValidity.passwordConfirm}
+            placeholder="Confirm your password"
+            onInput={handlePassMatch}
+            required
+          />
+        </div>
+        {#if !passMatch}
+          <p class="error center-text">Passwords don't match</p>
+        {/if}
+        <div>
+          <button type="submit" class="m-auto w-100" disabled={!isValid}>Sign Up</button>
+        </div>
+      </form>
+    </div>
+    <div class="center-text">
+      <a href="/login">Already have an account?</a>
+    </div>
   </div>
-  <div class="center-text">
-    <a href="/login">Already have an account?</a>
-  </div>
-</div>
 
-<style>
-  .error {
-    font-size: 0.8rem;
-    color: var(--color-danger);
-    margin: 1rem 0;
-  }
-</style>
+  <style>
+    .error {
+      font-size: 0.8rem;
+      color: var(--color-danger);
+      margin: 1rem 0;
+    }
+  </style>
+</main>
