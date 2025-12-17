@@ -66,7 +66,7 @@ try {
   copyDir("login", "src/routes/login");
   copyDir("signup", "src/routes/signup");
   copyDir("secret", "src/routes/secret");
-  copyDir("test", "src/routes/test");
+  copyDir("layouts", "src/routes/layouts");
   copyDir("css-demo", "src/routes/css-demo");
   copyFile("+page.svelte", "src/routes/+page.svelte");
 

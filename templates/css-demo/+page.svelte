@@ -1,42 +1,13 @@
 <script>
   import { toastStore } from "@jsbursik/magic-ui";
+  import { Slider } from "@jsbursik/magic-ui";
 </script>
 
-<div class="center">
+<main>
   <header class="center-text">
     <h1>Semantic CSS Framework</h1>
     <p>A lightweight, semantic-first CSS framework that makes HTML beautiful by default.</p>
   </header>
-
-  <hr />
-
-  <!-- Typography Demo -->
-  <section>
-    <h2>Typography</h2>
-    <p>
-      This framework provides beautiful typography out of the box. All heading levels are styled with proper hierarchy, and body text has comfortable
-      line-height and spacing.
-    </p>
-
-    <h3>Heading Level 3</h3>
-    <h4>Heading Level 4</h4>
-    <h5>Heading Level 5</h5>
-    <h6>Heading Level 6</h6>
-
-    <p>
-      You can use <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a> that have smooth hover effects. There's also
-      <code>inline code</code> for technical content.
-    </p>
-
-    <blockquote>"This is a blockquote. It's perfect for highlighting important quotes or testimonials."</blockquote>
-
-    <pre><code
-        >{@html `// Code blocks look great too
-function hello() {
-  console.log('Hello, world!');
-}`}</code
-      ></pre>
-  </section>
 
   <hr />
 
@@ -71,6 +42,38 @@ function hello() {
 
   <hr />
 
+  <!-- Typography Demo -->
+  <section>
+    <h2>Typography</h2>
+    <p>
+      This framework provides beautiful typography out of the box. All heading levels are styled with proper hierarchy, and body text has comfortable
+      line-height and spacing.
+    </p>
+
+    <h3>Heading Level 3</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6</h6>
+
+    <p>
+      You can use <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a> that have smooth hover effects. There's also
+      <code>inline code</code> for technical content.
+    </p>
+
+    <blockquote>"This is a blockquote. It's perfect for highlighting important quotes or testimonials."</blockquote>
+
+    <div class="card">
+      <pre><code
+          >{@html `// Code blocks look great too
+function hello() {
+  console.log('Hello, world!');
+}`}</code
+        ></pre>
+    </div>
+  </section>
+
+  <hr />
+
   <!-- Alerts Demo -->
   <section>
     <h2>Alerts</h2>
@@ -99,6 +102,7 @@ function hello() {
     <h2>Buttons</h2>
 
     <button>Default</button>
+    <button class="btn-primary">Primary</button>
     <button class="btn-success">Success</button>
     <button class="btn-warning">Warning</button>
     <button class="btn-danger">Danger</button>
@@ -110,11 +114,11 @@ function hello() {
 
   <section>
     <h2>Toasts</h2>
-    <button onclick={() => toastStore.show("Info!", "info")}>Info</button>
+    <button onclick={() => toastStore.show("Info!", "info")} class="btn-primary">Info</button>
     <button onclick={() => toastStore.show("Success!", "success")} class="btn-success">Success</button>
     <button onclick={() => toastStore.show("Warning!", "warning")} class="btn-warning">Warning</button>
     <button onclick={() => toastStore.show("Danger!", "danger")} class="btn-danger">Danger</button>
-    <button onclick={() => toastStore.show("Long delay", "info", 100000)}>Long Delay</button>
+    <button onclick={() => toastStore.show("Long delay", "info", 100000)} class="btn-primary">Long Delay</button>
   </section>
 
   <hr />
@@ -153,14 +157,12 @@ function hello() {
         <fieldset>
           <legend>Preferences</legend>
           <div class="stack-sm">
-            <label>
-              <input type="checkbox" checked />
-              Subscribe to newsletter
-            </label>
-            <label>
-              <input type="checkbox" />
-              Send me product updates
-            </label>
+            <div>
+              <label for="test4">Test Label</label>
+              <input type="text" id="test4" placeholder="Test Input" />
+            </div>
+            <Slider id="test">Subscribe to newsletter</Slider>
+            <Slider id="test2">Subscribe to updates</Slider>
           </div>
         </fieldset>
 
@@ -230,9 +232,6 @@ function hello() {
         <span class="badge-success badge">Updated</span>
       </div>
     </div>
-
-    <h3>Grid</h3>
-    <p>The grid utility creates responsive columns that automatically adjust.</p>
   </section>
 
   <hr />
@@ -240,4 +239,4 @@ function hello() {
   <footer class="center-text">
     <p><small>Built with semantic HTML and zero JavaScript. Customize it however you like!</small></p>
   </footer>
-</div>
+</main>

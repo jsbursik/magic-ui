@@ -36,12 +36,12 @@
   <NavbarContent>
     <NavLink href="/">Home</NavLink>
     <NavLink href="/css-demo">CSS Demo</NavLink>
-    <NavbarDropdown
-      name="Test"
+    <NavDropdown
+      name="Layouts"
       menuItems={[
-        { label: "Test", href: "/test/test1" },
+        { label: "Three Column", href: "/layouts/three-col" },
         { label: "hr", divider: true },
-        { label: "Test 2", href: "/test/test2" },
+        { label: "Sidebar", href: "/layouts/side-bar" },
       ]}
     />
     {#if user}
@@ -52,15 +52,15 @@
     {#if user}
       <UserMenu {user} items={menuItems} {authClient} />
     {:else}
-      <a href="/login" class="btn">Login</a>
+      <a href="/login" class="btn btn-primary">Login</a>
       <a href="/signup" class="btn btn-success">Sign Up</a>
     {/if}
   </NavbarMenu>
 </Navbar>
 
-<main>
+<div class="content-wrapper">
   {@render children()}
-</main>
+</div>
 
 <ToastContainer />
 <ModeToggle />
