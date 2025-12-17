@@ -232,9 +232,6 @@ function hello() {
         <span class="badge-success badge">Updated</span>
       </div>
     </div>
-
-    <h3>Grid</h3>
-    <p>The grid utility creates responsive columns that automatically adjust.</p>
   </section>
 
   <hr />
