@@ -11,36 +11,6 @@
 
   <hr />
 
-  <!-- Typography Demo -->
-  <section>
-    <h2>Typography</h2>
-    <p>
-      This framework provides beautiful typography out of the box. All heading levels are styled with proper hierarchy, and body text has comfortable
-      line-height and spacing.
-    </p>
-
-    <h3>Heading Level 3</h3>
-    <h4>Heading Level 4</h4>
-    <h5>Heading Level 5</h5>
-    <h6>Heading Level 6</h6>
-
-    <p>
-      You can use <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a> that have smooth hover effects. There's also
-      <code>inline code</code> for technical content.
-    </p>
-
-    <blockquote>"This is a blockquote. It's perfect for highlighting important quotes or testimonials."</blockquote>
-
-    <pre><code
-        >{@html `// Code blocks look great too
-function hello() {
-  console.log('Hello, world!');
-}`}</code
-      ></pre>
-  </section>
-
-  <hr />
-
   <!-- Cards Demo -->
   <section>
     <h2>Cards</h2>
@@ -67,6 +37,38 @@ function hello() {
         <p>Everything is built with CSS variables, so customization is as simple as changing a few values.</p>
         <button>Get Started</button>
       </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <!-- Typography Demo -->
+  <section>
+    <h2>Typography</h2>
+    <p>
+      This framework provides beautiful typography out of the box. All heading levels are styled with proper hierarchy, and body text has comfortable
+      line-height and spacing.
+    </p>
+
+    <h3>Heading Level 3</h3>
+    <h4>Heading Level 4</h4>
+    <h5>Heading Level 5</h5>
+    <h6>Heading Level 6</h6>
+
+    <p>
+      You can use <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a> that have smooth hover effects. There's also
+      <code>inline code</code> for technical content.
+    </p>
+
+    <blockquote>"This is a blockquote. It's perfect for highlighting important quotes or testimonials."</blockquote>
+
+    <div class="card">
+      <pre><code
+          >{@html `// Code blocks look great too
+function hello() {
+  console.log('Hello, world!');
+}`}</code
+        ></pre>
     </div>
   </section>
 
