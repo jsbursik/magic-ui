@@ -1,8 +1,9 @@
 <script>
+  import Slider from "$lib/components/form-components/slider.svelte";
   import { toastStore } from "$lib/stores/toast.js";
 </script>
 
-<div class="center">
+<main>
   <header class="center-text">
     <h1>Semantic CSS Framework</h1>
     <p>A lightweight, semantic-first CSS framework that makes HTML beautiful by default.</p>
@@ -99,6 +100,7 @@ function hello() {
     <h2>Buttons</h2>
 
     <button>Default</button>
+    <button class="btn-primary">Primary</button>
     <button class="btn-success">Success</button>
     <button class="btn-warning">Warning</button>
     <button class="btn-danger">Danger</button>
@@ -110,11 +112,11 @@ function hello() {
 
   <section>
     <h2>Toasts</h2>
-    <button onclick={() => toastStore.show("Info!", "info")}>Info</button>
+    <button onclick={() => toastStore.show("Info!", "info")} class="btn-primary">Info</button>
     <button onclick={() => toastStore.show("Success!", "success")} class="btn-success">Success</button>
     <button onclick={() => toastStore.show("Warning!", "warning")} class="btn-warning">Warning</button>
     <button onclick={() => toastStore.show("Danger!", "danger")} class="btn-danger">Danger</button>
-    <button onclick={() => toastStore.show("Long delay", "info", 100000)}>Long Delay</button>
+    <button onclick={() => toastStore.show("Long delay", "info", 100000)} class="btn-primary">Long Delay</button>
   </section>
 
   <hr />
@@ -153,14 +155,12 @@ function hello() {
         <fieldset>
           <legend>Preferences</legend>
           <div class="stack-sm">
-            <label>
-              <input type="checkbox" checked />
-              Subscribe to newsletter
-            </label>
-            <label>
-              <input type="checkbox" />
-              Send me product updates
-            </label>
+            <div>
+              <label for="test4">Test Label</label>
+              <input type="text" id="test4" placeholder="Test Input" />
+            </div>
+            <Slider id="test">Subscribe to newsletter</Slider>
+            <Slider id="test2">Subscribe to updates</Slider>
           </div>
         </fieldset>
 
@@ -240,4 +240,4 @@ function hello() {
   <footer class="center-text">
     <p><small>Built with semantic HTML and zero JavaScript. Customize it however you like!</small></p>
   </footer>
-</div>
+</main>
