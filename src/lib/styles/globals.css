@@ -426,6 +426,7 @@ tbody tr:hover {
   border-radius: var(--radius);
   padding: var(--space-lg);
   box-shadow: var(--shadow-sm);
+  margin-bottom: 1rem;
 }
 
 .card:hover {
@@ -472,7 +473,7 @@ tbody tr:hover {
 .grid {
   display: grid;
   gap: var(--space-lg);
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
 }
 
 /* Center */
