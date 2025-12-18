@@ -56,7 +56,7 @@
     <h6>Heading Level 6</h6>
 
     <p>
-      You can use <strong>bold text</strong>, <em>italic text</em>, and <a href="#">links</a> that have smooth hover effects. There's also
+      You can use <strong>bold text</strong>, <em>italic text</em>, and <a href="/css-demo">links</a> that have smooth hover effects. There's also
       <code>inline code</code> for technical content.
     </p>
 
@@ -106,6 +106,13 @@ function hello() {
     <button class="btn-success">Success</button>
     <button class="btn-warning">Warning</button>
     <button class="btn-danger">Danger</button>
+    <br /><br />
+    <h2>Anchor Buttons</h2>
+    <a class="btn" href="/css-demo">Default</a>
+    <a class="btn btn-primary" href="/css-demo">Primary</a>
+    <a class="btn btn-success" href="/css-demo">Success</a>
+    <a class="btn btn-warning" href="/css-demo">Warning</a>
+    <a class="btn btn-danger" href="/css-demo">Danger</a>
   </section>
 
   <hr />
