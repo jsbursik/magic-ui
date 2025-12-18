@@ -11,13 +11,18 @@
   --color-border: #e5e7eb;
   --color-text: #1a1a1a;
   --color-text-muted: #6b7280;
-  --color-primary: #5087ff;
-  --color-primary-hover: #1d4ed8;
-  --color-success: #13da98;
-  --color-warning: #fdad23;
-  --color-danger: #ff6565;
+  --color-primary: #48b2f4;
+  --color-primary-hover: color-mix(in srgb, var(--color-primary) 60%, white);
+  --color-success: #09ce79;
+  --color-success-hover: color-mix(in srgb, var(--color-success) 60%, white);
+  --color-warning: #faa617;
+  --color-warning-hover: color-mix(in srgb, var(--color-warning) 60%, white);
+  --color-danger: #f93838;
+  --color-danger-hover: color-mix(in srgb, var(--color-danger) 60%, white);
   --color-scrollbar: #8a8b8d;
   --color-input-bg: var(--color-surface);
+  --color-btn: #dee1e1;
+  --color-btn-hover: color-mix(in srgb, var(--color-btn) 60%, white);
 
   /* Spacing */
   --space-xs: 0.25rem;
@@ -50,13 +55,14 @@
   --color-border: #363636;
   --color-text: #ededed;
   --color-text-muted: #a3a3a3;
-  --color-primary: #3b82f6;
-  --color-primary-hover: #60a5fa;
-  --color-success: #22c55e;
-  --color-warning: #fbbf24;
-  --color-danger: #f87171;
   --color-scrollbar: #4f4f4f;
   --color-input-bg: #0d0d0d;
+  --color-btn: #5a5a5a;
+
+  --color-primary: #419fda;
+  --color-success: #0aa763;
+  --color-warning: #e39917;
+  --color-danger: #cf3131;
 }
 
 /* === BASE RESET === */
@@ -334,7 +340,7 @@ button,
   font-size: 1rem;
   font-weight: 500;
   color: var(--color-text);
-  background: var(--color-border);
+  background: var(--color-btn);
   border: 1px solid var(--color-border);
   border-radius: var(--radius);
   cursor: pointer;
@@ -347,7 +353,8 @@ button:hover,
 .btn:hover,
 button:active,
 .btn:active {
-  background: var(--color-bg);
+  background: color-mix(in srgb, var(--color-btn) 60%, white);
+  box-shadow: 0 0 3px var(--color-btn);
 }
 
 button:disabled {
@@ -355,14 +362,14 @@ button:disabled {
   cursor: not-allowed;
   transform: none;
   &:hover {
-    background: var(--color-border);
+    background: var(--color-btn);
+    box-shadow: none;
+    border-color: none;
   }
 }
 
-a.btn,
-a.btn:hover {
-  color: white;
-  text-decoration: none;
+a.btn {
+  color: inherit;
 }
 
 /* === TABLES === */
@@ -551,39 +558,59 @@ tbody tr:hover {
 }
 
 /* Buttons */
+a.btn-primary,
 .btn-primary {
-  color: white;
+  color: color-mix(in srgb, var(--color-primary) 10%, white);
   background: var(--color-primary);
+  border-color: var(--color-primary);
   &:hover {
-    background: color-mix(in srgb, var(--color-primary), 20% black);
+    border-color: var(--color-primary-hover);
+    background: var(--color-primary-hover);
+    box-shadow: 0 0 3px var(--color-primary);
   }
 }
-
+a.btn-success,
 .btn-success {
+  color: color-mix(in srgb, var(--color-success) 10%, white);
   background: color-mix(in srgb, var(--color-success) 85%, white);
   border-color: var(--color-success);
-
   &:hover {
-    background: color-mix(in srgb, var(--color-success) 85%, black);
+    border-color: var(--color-success-hover);
+    background: var(--color-success-hover);
+    box-shadow: 0 0 3px var(--color-success);
   }
 }
 
+a.btn-warning,
 .btn-warning {
+  color: color-mix(in srgb, var(--color-warning) 10%, white);
   background: color-mix(in srgb, var(--color-warning) 85%, white);
   border-color: var(--color-warning);
-
   &:hover {
-    background: color-mix(in srgb, var(--color-warning) 85%, black);
+    border-color: var(--color-warning-hover);
+    background: var(--color-warning-hover);
+    box-shadow: 0 0 3px var(--color-warning);
   }
 }
 
+a.btn-danger,
 .btn-danger {
+  color: color-mix(in srgb, var(--color-danger) 10%, white);
   background: color-mix(in srgb, var(--color-danger) 85%, white);
   border-color: var(--color-danger);
-
   &:hover {
-    background: color-mix(in srgb, var(--color-danger) 85%, black);
+    background: var(--color-danger-hover);
+    border-color: var(--color-danger-hover);
+    box-shadow: 0 0 3px var(--color-danger);
   }
+}
+
+a.btn,
+a.btn-primary,
+a.btn-success,
+a.btn-warning,
+a.btn-danger {
+  text-decoration: none;
 }
 
 .mtg-card {
