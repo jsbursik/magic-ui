@@ -1,5 +1,7 @@
 <script>
+  import Checkbox from "$lib/components/form-components/checkbox.svelte";
   import Slider from "$lib/components/form-components/slider.svelte";
+  import Upload from "$lib/components/form-components/upload.svelte";
   import { toastStore } from "$lib/stores/toast.js";
 </script>
 
@@ -164,13 +166,15 @@ function hello() {
         <fieldset>
           <legend>Preferences</legend>
           <div class="stack-sm">
-            <div>
-              <label for="test4">Test Label</label>
-              <input type="text" id="test4" placeholder="Test Input" />
-            </div>
             <Slider id="test">Subscribe to newsletter</Slider>
             <Slider id="test2">Subscribe to updates</Slider>
+            <Checkbox id="test-checkbox">Accept the Terms</Checkbox>
           </div>
+        </fieldset>
+
+        <fieldset>
+          <legend>File Upload</legend>
+          <Upload id="test-upload" />
         </fieldset>
 
         <div class="cluster">
