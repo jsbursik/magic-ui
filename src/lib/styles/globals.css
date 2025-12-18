@@ -56,7 +56,7 @@
   --color-text: #ededed;
   --color-text-muted: #a3a3a3;
   --color-scrollbar: #4f4f4f;
-  --color-input-bg: #0d0d0d;
+  --color-input-bg: #373737;
   --color-btn: #5a5a5a;
 
   --color-primary: #419fda;
@@ -260,9 +260,14 @@ input[type="radio"] {
 
 label {
   display: block;
-  margin-bottom: var(--space-sm);
   font-weight: 500;
   color: var(--color-text);
+
+  &:has(+ input),
+  &:has(+ select),
+  &:has(+ textarea) {
+    margin-bottom: var(--space-sm);
+  }
 }
 
 fieldset {
