@@ -1,6 +1,8 @@
 // Components
 export { default as Input } from "./components/form-components/input.svelte";
 export { default as Slider } from "./components/form-components/slider.svelte";
+export { default as Checkbox } from "./components/form-components/checkbox.svelte";
+export { default as Upload } from "./components/form-components/upload.svelte";
 export { default as ModeToggle } from "./components/mode-toggle.svelte";
 export { default as Toast } from "./components/toast/toast.svelte";
 export { default as ToastContainer } from "./components/toast/toast-container.svelte";
