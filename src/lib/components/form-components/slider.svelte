@@ -1,10 +1,10 @@
 <script lang="ts">
-  let { id, children } = $props();
+  let { id, children, checked = false } = $props();
 </script>
 
 <div class="switch-wrapper">
   <label class="switch">
-    <input type="checkbox" name={id} />
+    <input type="checkbox" name={id} {checked} />
     <span class="slider"></span>
   </label>
   <label for={id} class="switch-label">{@render children()}</label>

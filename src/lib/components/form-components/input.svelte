@@ -1,9 +1,10 @@
 <script lang="ts">
   let {
     type,
-    name,
     id,
-    placeholder,
+    name = id,
+    placeholder = undefined,
+    disabled = false,
     required = false,
     value = $bindable(""),
     valid = $bindable(false),
@@ -35,6 +36,7 @@
   {id}
   {placeholder}
   {required}
+  {disabled}
   {...props}
   {value}
   class:invalid={touched && !valid}

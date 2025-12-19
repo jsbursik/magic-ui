@@ -1,11 +1,11 @@
 <script lang="ts">
-  let { id, name = id, accept = undefined, onchange = undefined } = $props();
+  let { id, name = id, accept = undefined, onchange = undefined, multiple = false } = $props();
 </script>
 
 <label for={id} class="custom-file-upload">
   <span>Upload your file here</span>
 </label>
-<input type="file" {id} {name} {accept} {onchange} multiple />
+<input type="file" {id} {name} {accept} {onchange} {multiple} />
 
 <style>
   input[type="file"] {

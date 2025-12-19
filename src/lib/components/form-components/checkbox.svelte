@@ -1,10 +1,10 @@
 <script lang="ts">
-  let { id, name = id, children } = $props();
+  let { id, name = id, children, checked = false } = $props();
 </script>
 
 <div style="display: inline-flex; line-height: 1.1rem">
   <label class="cb-container">
-    <input type="checkbox" {id} {name} checked />
+    <input type="checkbox" {id} {name} {checked} />
     <span class="checkmark"></span>
   </label>
   <label for={id}>{@render children()}</label>
